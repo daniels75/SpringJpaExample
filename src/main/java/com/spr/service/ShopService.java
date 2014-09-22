@@ -3,6 +3,7 @@ package com.spr.service;
 import java.util.List;
 
 import com.spr.exception.ShopNotFound;
+import com.spr.model.Employee;
 import com.spr.model.Shop;
 
 public interface ShopService {
@@ -15,4 +16,6 @@ public interface ShopService {
 	
 	List<Shop> findAllShops();
 	Shop findShopByName(final String name);
+	
+	List<Employee> findAllEmployees();
 }

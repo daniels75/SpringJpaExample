@@ -3,8 +3,10 @@ package com.spr.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.spr.model.Shop;
 import com.spr.service.ShopService;
 
 @RestController
@@ -25,7 +27,14 @@ public class ShopRestController {
 	}
 	
 	@RequestMapping(value = "/shopByName", method = RequestMethod.GET)
-	public String findShopByName() {
-		return shopService.findShopByName("test").toString();
+	public String findShopByName(@RequestParam(value = "name", required = true) final String name) {
+		final Shop shop = shopService.findShopByName(name);
+		return shop != null ? shop.toString() : "";
 	}
+	
+	@RequestMapping(value = "/allEmployees", method = RequestMethod.GET)
+	public String findAllEmployees() {
+		return shopService.findAllEmployees().toString();
+	}
+	
 }

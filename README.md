@@ -5,10 +5,14 @@ Script:
 
 CREATE TABLE `shops` (`id` int(6) NOT NULL AUTO_INCREMENT,
 	  `name` varchar(60) NOT NULL,
-  `employees_number` int(6) NOT NULL,
+  `emplNumber` int(6) NOT NULL,
 	  PRIMARY KEY (`id`)
 	) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
-
+	
+CREATE TABLE `employee` (`id` int(6) NOT NULL AUTO_INCREMENT,
+	  `name` varchar(60) NOT NULL,
+	  PRIMARY KEY (`id`)
+	) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 	
 http://localhost:8080/SpringJpaExample/
 
@@ -16,3 +20,5 @@ http://localhost:8080/SpringJpaExample/
 REST
 http://localhost:8080/SpringJpaExample/data/findAll
 http://localhost:8080/SpringJpaExample/data/allShops
+http://localhost:8080/SpringJpaExample/data/shopByName?name=test
+http://localhost:8080/SpringJpaExample/data/allEmployees

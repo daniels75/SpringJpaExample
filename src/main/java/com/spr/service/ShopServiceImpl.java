@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.spr.exception.ShopNotFound;
+import com.spr.model.Employee;
 import com.spr.model.Shop;
 import com.spr.repository.ShopRepository;
 
@@ -69,6 +70,11 @@ public class ShopServiceImpl implements ShopService {
 	@Override
 	public Shop findShopByName(final String name) {
 		return shopRepository.findShopByName(name);
+	}
+	
+	@Override
+	public List<Employee> findAllEmployees() {
+		return shopRepository.findAllEmployee();
 	}
 
 }

@@ -6,16 +6,15 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity(name = "shops")
-@Table(name = "shops")
-public class Shop {
+@Entity(name = "employee")
+@Table(name = "employee")
+public class Employee {
+
 
 	private Integer id;
-	private String name;
-	private Integer emplNumber;
-	
-	//private Employee employee;
 
+	private String name;
+	
 	@Id
 	@GeneratedValue
 	@Column(name = "id")
@@ -36,20 +35,10 @@ public class Shop {
 		this.name = name;
 	}
 
-	@Column(name = "emplNumber")
-	public Integer getEmplNumber() {
-		return emplNumber;
-	}
-
-	public void setEmplNumber(Integer emplNumber) {
-		this.emplNumber = emplNumber;
-	}
-
 	@Override
 	public String toString() {
-		return "Shop [id=" + id + ", name=" + name + ", emplNumber="
-				+ emplNumber + "]";
+		return "Employee [id=" + id + ", name=" + name + "]";
 	}
-	
+
 	
 }
