@@ -19,4 +19,7 @@ public interface ShopRepository extends JpaRepository<Shop, Integer> {
 	
 	@Query("select e from employee e")
 	List<Employee> findAllEmployee();
+	
+	@Query(value = "select s from shops as s join s.employee as e where s.employee = e.id AND e.name = ?1")
+	Shop findShopByEmployeeName(final String name);
 }

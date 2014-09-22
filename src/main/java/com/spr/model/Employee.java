@@ -10,10 +10,15 @@ import javax.persistence.Table;
 @Table(name = "employee")
 public class Employee {
 
-
 	private Integer id;
-
 	private String name;
+	
+	public Employee(){
+	}
+	
+	public Employee(final String name){
+		this.name = name;
+	}
 	
 	@Id
 	@GeneratedValue

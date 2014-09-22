@@ -37,4 +37,10 @@ public class ShopRestController {
 		return shopService.findAllEmployees().toString();
 	}
 	
+	@RequestMapping(value = "/shopByEmployee", method = RequestMethod.GET)
+	public String findShopByEmployeeName(@RequestParam(value = "name", required = true) final String name) {
+		final Shop shop = shopService.findShopByEmployeeName(name);
+		return shop != null ? shop.toString() : "";
+	}
+	
 }

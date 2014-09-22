@@ -18,4 +18,6 @@ public interface ShopService {
 	Shop findShopByName(final String name);
 	
 	List<Employee> findAllEmployees();
+	
+	Shop findShopByEmployeeName(final String name);
 }

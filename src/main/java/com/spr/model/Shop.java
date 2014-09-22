@@ -2,9 +2,13 @@ package com.spr.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity(name = "shops")
 @Table(name = "shops")
@@ -12,9 +16,9 @@ public class Shop {
 
 	private Integer id;
 	private String name;
-	private Integer emplNumber;
+	//private Integer emplNumber;
 	
-	//private Employee employee;
+	private Employee employee;
 
 	@Id
 	@GeneratedValue
@@ -36,19 +40,32 @@ public class Shop {
 		this.name = name;
 	}
 
-	@Column(name = "emplNumber")
-	public Integer getEmplNumber() {
-		return emplNumber;
-	}
-
-	public void setEmplNumber(Integer emplNumber) {
-		this.emplNumber = emplNumber;
-	}
+	// FIXME
+//	@Column(name = "emplNumber")
+	
+//	@Transient
+//	public Integer getEmplNumber() {
+//		return employee.getId();
+//	}
+//
+//	public void setEmplNumber(Integer emplNumber) {
+//		employee.setId(emplNumber);
+//	}
 
 	@Override
 	public String toString() {
-		return "Shop [id=" + id + ", name=" + name + ", emplNumber="
-				+ emplNumber + "]";
+		return "Shop [id=" + id + ", name=" + name + ", employee="
+				+ employee + "]";
+	}
+
+	@OneToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "emplNumber")
+	public Employee getEmployee() {
+		return employee;
+	}
+
+	public void setEmployee(Employee employee) {
+		this.employee = employee;
 	}
 	
 	

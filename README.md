@@ -20,5 +20,14 @@ http://localhost:8080/SpringJpaExample/
 REST
 http://localhost:8080/SpringJpaExample/data/findAll
 http://localhost:8080/SpringJpaExample/data/allShops
-http://localhost:8080/SpringJpaExample/data/shopByName?name=test
+http://localhost:8080/SpringJpaExample/data/shopByName?name=test1
+http://localhost:8080/SpringJpaExample/data/shopByName?name=test2
 http://localhost:8080/SpringJpaExample/data/allEmployees
+
+// join table
+http://localhost:8080/SpringJpaExample/data/shopByEmployee?name=test1
+http://localhost:8080/SpringJpaExample/data/shopByEmployee?name=Daniels
+
+select s.* from shops s, employee e
+where s.emplNumber = e.id
+and e.name = "Daniels"

@@ -21,13 +21,15 @@ public class ShopValidator implements Validator {
 	public void validate(Object target, Errors errors) {
 		Shop shop = (Shop) target;
 		
-		Integer emplNumber = shop.getEmplNumber();
-		
-		ValidationUtils.rejectIfEmpty(errors, "name", "shop.name.empty");
-		ValidationUtils.rejectIfEmpty(errors, EMPLOYEES_NUMBER, "shop.emplNumber.empty");
-		
-		if (emplNumber != null && emplNumber < 1)
-			errors.rejectValue(EMPLOYEES_NUMBER, "shop.emplNumber.lessThenOne");
+		// FIXME
+//		Integer emplNumber = shop.getEmplNumber();
+//		
+//		ValidationUtils.rejectIfEmpty(errors, "name", "shop.name.empty");
+//		ValidationUtils.rejectIfEmpty(errors, EMPLOYEES_NUMBER, "shop.emplNumber.empty");
+//		
+//		if (emplNumber != null && emplNumber < 1){
+//			errors.rejectValue(EMPLOYEES_NUMBER, "shop.emplNumber.lessThenOne");
+//		}
 
 	}
 
